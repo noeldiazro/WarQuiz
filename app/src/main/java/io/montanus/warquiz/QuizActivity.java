@@ -30,6 +30,6 @@ public class QuizActivity extends Activity implements View {
 
     @Override
     public void redirectToNoQuestionsFound() {
-        Toast.makeText(this, "There are no questions :(", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.no_questions_msg, Toast.LENGTH_LONG).show();
     }
 }

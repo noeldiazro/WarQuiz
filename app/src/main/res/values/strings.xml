@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WarQuiz</string>
     <string name="germany_question">Germany took part in World War II</string>
+    <string name="no_questions_msg">There are no questions :(</string>
 </resources>
