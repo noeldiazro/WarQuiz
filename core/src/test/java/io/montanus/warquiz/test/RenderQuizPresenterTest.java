@@ -52,9 +52,6 @@ public final class RenderQuizPresenterTest {
         void redirectToNoQuestionsFound();
     }
 
-    private static class Question {
-    }
-
     private static class QuizPresenter {
         private final Repository repository;
         private final View view;
