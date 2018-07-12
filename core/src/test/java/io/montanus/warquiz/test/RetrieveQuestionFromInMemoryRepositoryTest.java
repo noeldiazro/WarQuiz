@@ -1,26 +1,18 @@
 package io.montanus.warquiz.test;
 
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+public class RetrieveQuestionFromInMemoryRepositoryTest extends RetrieveQuestionFromRepositoryContract {
 
-public class RetrieveQuestionFromInMemoryRepositoryTest {
-    @Test
-    public void zeroQuestions() {
-        final InMemoryRepository repository =
-                new InMemoryRepository(Collections.<Question>emptyList());
-        assertEquals(null, repository.getQuestion());
+    @Override
+    protected Repository getEmptyRepository() {
+        return new InMemoryRepository(Collections.<Question>emptyList());
     }
 
-    @Test
-    public void oneQuestion() {
-        final Question question = new Question();
-        final InMemoryRepository repository =
-                new InMemoryRepository(Collections.singletonList(question));
-        assertEquals(question, repository.getQuestion());
+    @Override
+    protected Repository getRepositoryIncluding(Question question) {
+        return new InMemoryRepository(Collections.singletonList(question));
     }
 
     private static class InMemoryRepository implements Repository {
