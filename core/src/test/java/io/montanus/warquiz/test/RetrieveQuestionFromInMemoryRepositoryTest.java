@@ -23,14 +23,14 @@ public class RetrieveQuestionFromInMemoryRepositoryTest {
         assertEquals(question, repository.getQuestion());
     }
 
-    private static class InMemoryRepository {
+    private static class InMemoryRepository implements Repository {
         private final List<Question> questions;
 
         private InMemoryRepository(List<Question> questions) {
             this.questions = questions;
         }
 
-        private Question getQuestion() {
+        public Question getQuestion() {
             if (questions.isEmpty())
                 return null;
             else
