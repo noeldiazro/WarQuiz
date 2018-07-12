@@ -7,25 +7,24 @@ import android.widget.TextView;
 import java.util.Collections;
 
 public class QuizActivity extends Activity implements View {
-    private final QuizPresenter quizPresenter;
-
-    public QuizActivity() {
-        final InMemoryRepository repository =
-                new InMemoryRepository(Collections.singletonList(new Question("::irrelevant::")));
-        quizPresenter = new QuizPresenter(repository, this);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        final Question question = new Question(getString(R.string.germany_question));
+        final InMemoryRepository repository =
+                new InMemoryRepository(Collections.singletonList(question));
+        final QuizPresenter quizPresenter = new QuizPresenter(repository, this);
+
         quizPresenter.onRender();
     }
 
     @Override
     public void setQuestion(Question question) {
         final TextView questionText = findViewById(R.id.question_text);
-        questionText.setText(question.toString());
+        questionText.setText(question.getText());
     }
 
     @Override
