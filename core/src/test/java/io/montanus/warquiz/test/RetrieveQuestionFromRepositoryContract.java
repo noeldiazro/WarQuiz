@@ -18,7 +18,7 @@ public abstract class RetrieveQuestionFromRepositoryContract {
 
     @Test
     public void oneQuestion() {
-        final Question question = new Question();
+        final Question question = new Question("::irrelevant::");
         final Repository repository = getRepositoryIncluding(question);
         assertEquals(question, repository.getQuestion());
     }

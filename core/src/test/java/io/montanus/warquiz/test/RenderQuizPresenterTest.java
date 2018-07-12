@@ -17,7 +17,7 @@ public final class RenderQuizPresenterTest {
     @Test
     public void questionFound() {
         final Repository repository = context.mock(Repository.class);
-        final Question question = new Question();
+        final Question question = new Question("::irrelevant::");
         final View view = context.mock(View.class);
 
         context.checking(new Expectations() {{

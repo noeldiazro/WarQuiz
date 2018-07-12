@@ -11,7 +11,7 @@ public class QuizActivity extends Activity implements View {
 
     public QuizActivity() {
         final InMemoryRepository repository =
-                new InMemoryRepository(Collections.singletonList(new Question()));
+                new InMemoryRepository(Collections.singletonList(new Question("::irrelevant::")));
         quizPresenter = new QuizPresenter(repository, this);
     }
 
