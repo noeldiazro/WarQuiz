@@ -5,6 +5,9 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 import org.junit.Test;
 
+import io.montanus.warquiz.Question;
+import io.montanus.warquiz.View;
+
 public final class RenderQuizPresenterTest {
     @Rule
     public final JUnitRuleMockery context = new JUnitRuleMockery();
@@ -40,12 +43,6 @@ public final class RenderQuizPresenterTest {
 
         final QuizPresenter quizPresenter = new QuizPresenter(repository, view);
         quizPresenter.onRender();
-    }
-
-    private interface View {
-        void setQuestion(Question question);
-
-        void redirectToNoQuestionsFound();
     }
 
     private static class QuizPresenter {

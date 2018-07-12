@@ -2,6 +2,8 @@ package io.montanus.warquiz.test;
 
 import org.junit.Test;
 
+import io.montanus.warquiz.Question;
+
 import static org.junit.Assert.assertEquals;
 
 public abstract class RetrieveQuestionFromRepositoryContract {

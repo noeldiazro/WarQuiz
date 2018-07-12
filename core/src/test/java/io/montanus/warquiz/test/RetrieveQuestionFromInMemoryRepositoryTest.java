@@ -3,6 +3,8 @@ package io.montanus.warquiz.test;
 import java.util.Collections;
 import java.util.List;
 
+import io.montanus.warquiz.Question;
+
 public class RetrieveQuestionFromInMemoryRepositoryTest extends RetrieveQuestionFromRepositoryContract {
 
     @Override
