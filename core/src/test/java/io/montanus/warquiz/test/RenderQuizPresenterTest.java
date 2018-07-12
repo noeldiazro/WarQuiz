@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import io.montanus.warquiz.Question;
+import io.montanus.warquiz.QuizPresenter;
 import io.montanus.warquiz.Repository;
 import io.montanus.warquiz.View;
 
@@ -46,21 +47,4 @@ public final class RenderQuizPresenterTest {
         quizPresenter.onRender();
     }
 
-    private static class QuizPresenter {
-        private final Repository repository;
-        private final View view;
-
-        private QuizPresenter(Repository repository, View view) {
-            this.repository = repository;
-            this.view = view;
-        }
-
-        private void onRender() {
-            final Question question = repository.getQuestion();
-            if (question == null)
-                view.redirectToNoQuestionsFound();
-            else
-                view.setQuestion(question);
-        }
-    }
 }
