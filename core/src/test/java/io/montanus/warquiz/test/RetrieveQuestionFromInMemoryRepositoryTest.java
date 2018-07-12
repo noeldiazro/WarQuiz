@@ -15,13 +15,26 @@ public class RetrieveQuestionFromInMemoryRepositoryTest {
         assertEquals(null, repository.getQuestion());
     }
 
-    private static class InMemoryRepository {
-        private InMemoryRepository(List<Question> questions) {
+    @Test
+    public void oneQuestion() {
+        final Question question = new Question();
+        final InMemoryRepository repository =
+                new InMemoryRepository(Collections.singletonList(question));
+        assertEquals(question, repository.getQuestion());
+    }
 
+    private static class InMemoryRepository {
+        private final List<Question> questions;
+
+        private InMemoryRepository(List<Question> questions) {
+            this.questions = questions;
         }
 
         private Question getQuestion() {
-            return null;
+            if (questions.isEmpty())
+                return null;
+            else
+                return questions.iterator().next();
         }
     }
 }
