@@ -3,11 +3,21 @@ package io.montanus.warquiz;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class QuizActivity extends Activity {
+public class QuizActivity extends Activity implements View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+    }
+
+    @Override
+    public void setQuestion(Question question) {
+        // TODO
+    }
+
+    @Override
+    public void redirectToNoQuestionsFound() {
+        // TODO
     }
 }
