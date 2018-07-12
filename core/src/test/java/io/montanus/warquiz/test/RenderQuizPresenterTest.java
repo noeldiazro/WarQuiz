@@ -42,10 +42,6 @@ public final class RenderQuizPresenterTest {
         quizPresenter.onRender();
     }
 
-    private interface Repository {
-        Question getQuestion();
-    }
-
     private interface View {
         void setQuestion(Question question);
 
