@@ -26,12 +26,30 @@ public final class RenderQuizPresenterTest {
         quizPresenter.onRender();
     }
 
+    @Test
+    public void questionNotFound() {
+        final Repository repository = context.mock(Repository.class);
+        final View view = context.mock(View.class);
+
+        context.checking(new Expectations() {{
+            allowing(repository).getQuestion();
+            will(returnValue(null));
+
+            oneOf(view).redirectToNoQuestionsFound();
+        }});
+
+        final QuizPresenter quizPresenter = new QuizPresenter(repository, view);
+        quizPresenter.onRender();
+    }
+
     private interface Repository {
         Question getQuestion();
     }
 
     private interface View {
         void setQuestion(Question question);
+
+        void redirectToNoQuestionsFound();
     }
 
     private static class Question {
@@ -47,7 +65,11 @@ public final class RenderQuizPresenterTest {
         }
 
         private void onRender() {
-            view.setQuestion(repository.getQuestion());
+            final Question question = repository.getQuestion();
+            if (question == null)
+                view.redirectToNoQuestionsFound();
+            else
+                view.setQuestion(question);
         }
     }
 }
