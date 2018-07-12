@@ -1,8 +1,8 @@
 package io.montanus.warquiz.test;
 
 import java.util.Collections;
-import java.util.List;
 
+import io.montanus.warquiz.InMemoryRepository;
 import io.montanus.warquiz.Question;
 import io.montanus.warquiz.Repository;
 
@@ -18,18 +18,4 @@ public class RetrieveQuestionFromInMemoryRepositoryTest extends RetrieveQuestion
         return new InMemoryRepository(Collections.singletonList(question));
     }
 
-    private static class InMemoryRepository implements Repository {
-        private final List<Question> questions;
-
-        private InMemoryRepository(List<Question> questions) {
-            this.questions = questions;
-        }
-
-        public Question getQuestion() {
-            if (questions.isEmpty())
-                return null;
-            else
-                return questions.iterator().next();
-        }
-    }
 }
