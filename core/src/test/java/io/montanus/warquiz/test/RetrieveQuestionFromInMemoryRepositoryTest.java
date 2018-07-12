@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import io.montanus.warquiz.Question;
+import io.montanus.warquiz.Repository;
 
 public class RetrieveQuestionFromInMemoryRepositoryTest extends RetrieveQuestionFromRepositoryContract {
 

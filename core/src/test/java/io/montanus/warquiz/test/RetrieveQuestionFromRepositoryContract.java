@@ -3,6 +3,7 @@ package io.montanus.warquiz.test;
 import org.junit.Test;
 
 import io.montanus.warquiz.Question;
+import io.montanus.warquiz.Repository;
 
 import static org.junit.Assert.assertEquals;
 

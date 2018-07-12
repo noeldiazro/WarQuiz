@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import io.montanus.warquiz.Question;
+import io.montanus.warquiz.Repository;
 import io.montanus.warquiz.View;
 
 public final class RenderQuizPresenterTest {
