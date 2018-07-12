@@ -3,6 +3,7 @@ package io.montanus.warquiz;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Collections;
 
@@ -29,6 +30,6 @@ public class QuizActivity extends Activity implements View {
 
     @Override
     public void redirectToNoQuestionsFound() {
-        // TODO
+        Toast.makeText(this, "There are no questions :(", Toast.LENGTH_LONG).show();
     }
 }
