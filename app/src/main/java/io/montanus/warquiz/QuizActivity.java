@@ -14,7 +14,7 @@ public class QuizActivity extends Activity implements View {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        final Question question = new Question(getString(R.string.germany_question), Answer.TRUE);
+        final QuestionImpl question = new QuestionImpl(getString(R.string.germany_question), Answer.TRUE);
         final InMemoryRepository repository =
                 new InMemoryRepository(Collections.singletonList(question));
         final QuizPresenter quizPresenter = new QuizPresenter(repository, this);
@@ -23,7 +23,7 @@ public class QuizActivity extends Activity implements View {
     }
 
     @Override
-    public void setQuestion(Question question) {
+    public void setQuestion(QuestionImpl question) {
         final TextView questionText = findViewById(R.id.question_text);
         questionText.setText(question.getText());
     }

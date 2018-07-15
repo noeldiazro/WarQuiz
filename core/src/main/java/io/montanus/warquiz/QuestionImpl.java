@@ -1,10 +1,10 @@
 package io.montanus.warquiz;
 
-public final class Question {
+public final class QuestionImpl {
     private final String text;
     private final Answer correctAnswer;
 
-    public Question(String text, Answer correctAnswer) {
+    public QuestionImpl(String text, Answer correctAnswer) {
         this.text = text;
         this.correctAnswer = correctAnswer;
     }

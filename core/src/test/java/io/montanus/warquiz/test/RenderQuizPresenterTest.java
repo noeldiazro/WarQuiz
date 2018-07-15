@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import io.montanus.warquiz.Answer;
-import io.montanus.warquiz.Question;
+import io.montanus.warquiz.QuestionImpl;
 import io.montanus.warquiz.QuizPresenter;
 import io.montanus.warquiz.Repository;
 import io.montanus.warquiz.View;
@@ -19,7 +19,7 @@ public final class RenderQuizPresenterTest {
     public void questionFound() {
         final Repository repository = context.mock(Repository.class);
         final Answer irrelevantAnswer = Answer.TRUE;
-        final Question question = new Question("::irrelevant::", irrelevantAnswer);
+        final QuestionImpl question = new QuestionImpl("::irrelevant::", irrelevantAnswer);
         final View view = context.mock(View.class);
 
         context.checking(new Expectations() {{
