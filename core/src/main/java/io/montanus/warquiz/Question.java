@@ -12,6 +12,9 @@ public final class Question {
     }
 
     public Result check(Answer userAnswer) {
-        return Result.RIGHT;
+        if (userAnswer == Answer.TRUE)
+            return Result.RIGHT;
+        else
+            return Result.WRONG;
     }
 }

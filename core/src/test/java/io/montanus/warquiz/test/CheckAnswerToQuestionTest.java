@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 import io.montanus.warquiz.Answer;
 import io.montanus.warquiz.Question;
@@ -30,7 +30,10 @@ public final class CheckAnswerToQuestionTest {
 
     @Parameters(name = "Correct answer is {0} and user responds {1}, then result is {2}")
     public static Collection<Object[]> parameters() {
-        return Collections.singletonList(new Object[] {Answer.TRUE, Answer.TRUE, Result.RIGHT});
+        return new ArrayList<Object[]>() {{
+            add(new Object[] {Answer.TRUE, Answer.TRUE, Result.RIGHT});
+            add(new Object[] {Answer.TRUE, Answer.FALSE, Result.WRONG});
+        }};
     }
 
     @Test
