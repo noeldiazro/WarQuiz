@@ -3,7 +3,7 @@ package io.montanus.warquiz;
 public final class Question {
     private final String text;
 
-    public Question(String text) {
+    public Question(String text, Answer correctAnswer) {
         this.text = text;
     }
 

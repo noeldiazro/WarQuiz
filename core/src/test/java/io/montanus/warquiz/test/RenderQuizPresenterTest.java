@@ -5,6 +5,7 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 import org.junit.Test;
 
+import io.montanus.warquiz.Answer;
 import io.montanus.warquiz.Question;
 import io.montanus.warquiz.QuizPresenter;
 import io.montanus.warquiz.Repository;
@@ -17,7 +18,8 @@ public final class RenderQuizPresenterTest {
     @Test
     public void questionFound() {
         final Repository repository = context.mock(Repository.class);
-        final Question question = new Question("::irrelevant::");
+        final Answer irrelevantAnswer = Answer.TRUE;
+        final Question question = new Question("::irrelevant::", irrelevantAnswer);
         final View view = context.mock(View.class);
 
         context.checking(new Expectations() {{
