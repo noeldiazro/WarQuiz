@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import io.montanus.warquiz.Answer;
+import io.montanus.warquiz.Question;
 import io.montanus.warquiz.QuestionImpl;
 import io.montanus.warquiz.Result;
 
@@ -40,7 +41,7 @@ public final class CheckAnswerToQuestionTest {
 
     @Test
     public void bothCorrectAndUserAnswerAreTrue() {
-        final QuestionImpl question = new QuestionImpl("::irrelevant::", correctAnswer);
+        final Question question = new QuestionImpl("::irrelevant::", correctAnswer);
         assertEquals(expectedResult, question.check(userAnswer));
     }
 }

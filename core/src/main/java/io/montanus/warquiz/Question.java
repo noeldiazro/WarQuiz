@@ -1,6 +1,6 @@
 package io.montanus.warquiz;
 
-interface Question {
+public interface Question {
     String getText();
 
     Result check(Answer userAnswer);
