@@ -10,4 +10,8 @@ public final class Question {
     public String getText() {
         return text;
     }
+
+    public Result check(Answer userAnswer) {
+        return Result.RIGHT;
+    }
 }
