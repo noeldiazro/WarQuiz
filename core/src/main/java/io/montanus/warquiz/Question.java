@@ -2,9 +2,11 @@ package io.montanus.warquiz;
 
 public final class Question {
     private final String text;
+    private final Answer correctAnswer;
 
     public Question(String text, Answer correctAnswer) {
         this.text = text;
+        this.correctAnswer = correctAnswer;
     }
 
     public String getText() {
@@ -12,9 +14,6 @@ public final class Question {
     }
 
     public Result check(Answer userAnswer) {
-        if (userAnswer == Answer.TRUE)
-            return Result.RIGHT;
-        else
-            return Result.WRONG;
+        return correctAnswer == userAnswer ? Result.RIGHT : Result.WRONG;
     }
 }

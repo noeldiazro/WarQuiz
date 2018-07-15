@@ -32,7 +32,9 @@ public final class CheckAnswerToQuestionTest {
     public static Collection<Object[]> parameters() {
         return Arrays.asList(new Object[][]{
                 {Answer.TRUE, Answer.TRUE, Result.RIGHT},
-                {Answer.TRUE, Answer.FALSE, Result.WRONG}
+                {Answer.TRUE, Answer.FALSE, Result.WRONG},
+                {Answer.FALSE, Answer.TRUE, Result.WRONG},
+                {Answer.FALSE, Answer.FALSE, Result.RIGHT}
         });
     }
 
