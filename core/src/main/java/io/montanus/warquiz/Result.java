@@ -1,4 +1,4 @@
-package io.montanus.warquiz.test;
+package io.montanus.warquiz;
 
 public enum Result {
     RIGHT,
