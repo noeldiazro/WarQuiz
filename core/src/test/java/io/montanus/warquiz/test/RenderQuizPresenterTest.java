@@ -23,7 +23,7 @@ public final class RenderQuizPresenterTest {
         final View view = context.mock(View.class);
 
         context.checking(new Expectations() {{
-            allowing(repository).getQuestion();
+            allowing(repository).getQuestionImpl();
             will(returnValue(question));
 
             oneOf(view).setQuestion(with(question));
@@ -39,7 +39,7 @@ public final class RenderQuizPresenterTest {
         final View view = context.mock(View.class);
 
         context.checking(new Expectations() {{
-            allowing(repository).getQuestion();
+            allowing(repository).getQuestionImpl();
             will(returnValue(null));
 
             oneOf(view).redirectToNoQuestionsFound();

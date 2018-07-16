@@ -1,5 +1,6 @@
 package io.montanus.warquiz;
 
 public interface Repository {
-    QuestionImpl getQuestion();
+    QuestionImpl getQuestionImpl();
+    Question getQuestion();
 }

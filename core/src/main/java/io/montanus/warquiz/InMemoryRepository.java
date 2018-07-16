@@ -9,7 +9,13 @@ public final class InMemoryRepository implements Repository {
         this.questions = questions;
     }
 
-    public QuestionImpl getQuestion() {
+    @Override
+    public QuestionImpl getQuestionImpl() {
+        return (QuestionImpl) getQuestion();
+    }
+
+    @Override
+    public Question getQuestion() {
         if (questions.isEmpty())
             return null;
         else
