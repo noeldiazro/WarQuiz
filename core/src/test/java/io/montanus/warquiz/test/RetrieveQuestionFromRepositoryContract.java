@@ -23,7 +23,7 @@ public abstract class RetrieveQuestionFromRepositoryContract {
         final Answer irrelevantAnswer = Answer.TRUE;
         final Question question = new QuestionImpl("::irrelevant::", irrelevantAnswer);
         final Repository repository = getRepositoryIncluding(question);
-        assertEquals(question, repository.getQuestionImpl());
+        assertEquals(question, repository.getQuestion());
     }
 
     protected abstract Repository getRepositoryIncluding(Question question);
