@@ -10,7 +10,7 @@ public final class QuizPresenter {
     }
 
     public void onRender() {
-        final QuestionImpl question = repository.getQuestion();
+        final Question question = repository.getQuestion();
         if (question == null)
             view.redirectToNoQuestionsFound();
         else
