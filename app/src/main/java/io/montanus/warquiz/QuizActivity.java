@@ -23,13 +23,13 @@ public class QuizActivity extends Activity implements View {
     }
 
     @Override
-    public void setQuestion(QuestionImpl question) {
-        final TextView questionText = findViewById(R.id.question_text);
-        questionText.setText(question.getText());
+    public void redirectToNoQuestionsFound() {
+        Toast.makeText(this, R.string.no_questions_msg, Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void redirectToNoQuestionsFound() {
-        Toast.makeText(this, R.string.no_questions_msg, Toast.LENGTH_LONG).show();
+    public void setQuestion(Question question) {
+        final TextView questionText = findViewById(R.id.question_text);
+        questionText.setText(question.getText());
     }
 }
